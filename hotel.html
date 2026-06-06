@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aarambh Family Veg Hotel | Jalgaon - Pure Veg Restaurant</title>
+    <meta name="description" content="Aarambh Family Veg Hotel Jalgaon - Best pure vegetarian family restaurant. Dine-in, Drive-through, No-contact delivery. ₹200-₹400 per person. Open 11 AM.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(40,167,69,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+            transform: translateY(-2px);
+        }
+
+        .contact-btn {
+            background: #ffd700;
+            color: #2c3e50;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,215,0,0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(40,167,69,0.9), rgba(32,201,151,0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%2328a745" width="1200" height="600"/><circle fill="%23ffffff" opacity="0.1" cx="300" cy="200" r="100"/><circle fill="%23ffd700" opacity="0.2" cx="900" cy="300" r="150"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content .rating {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .hero-content .price-range {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-green {
+            background: linear-gradient(135deg, #f8fff9 0%, #e8f5e8 100%);
+        }
+
+        .section-white {
+            background: white;
+        }
+
+        .section-dark {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #28a745;
+        }
+
+        .section-dark h2 {
+            color: #ffd700;
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid #28a745;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .menu-card h3 {
+            color: #28a745;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .menu-card .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #e74c3c;
+            margin: 1rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-card p {
+            padding: 1rem;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        /* Location Section */
+        .location-container {
+            text-align: center;
+        }
+
+        #map {
+            height: 450px;
+            width: 100%;
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .location-details {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .address {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .phone {
+            font-size: 1.5rem;
+            color: #28a745;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ffd700;
+            color: #2c3e50;
+            padding: 1.2rem 3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255,215,0,0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <i class="fas fa-utensils"></i>
+                <span>होटल आरंभ</span>
+                <span style="font-size: 0.9rem; font-weight: 400;">Family Veg Hotel</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="tel:07030018900" class="contact-btn">
+                <i class="fas fa-phone"></i> Call Now
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Aarambh Family Veg Hotel</h1>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>4.0 (133 Reviews)</span>
+            </div>
+            <div class="price-range">₹200 - ₹400 per person</div>
+            <a href="#location" class="btn">Order Now</a>
+            <a href="tel:07030018900" class="btn">Call 07030018900</a>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section section-green">
+        <h2><i class="fas fa-list"></i> Popular Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1604908176965-57146c24b1ae?auto=format&fit=crop&w=900&q=80" alt="Paneer Tikka">
+                <h3><i class="fas fa-drumstick-bite"></i> Paneer Tikka</h3>
+                <div class="price">₹220</div>
+                <p>Juicy paneer cubes marinated with special spices and grilled to perfection.</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1523986371872-9d3ba2e2f4c8?auto=format&fit=crop&w=900&q=80" alt="Dal Fry">
+                <h3><i class="fas fa-bowl-food"></i> Dal Fry</h3>
+                <div class="price">₹180</div>
+                <p>Traditional yellow dal tempered with garlic, cumin and fresh coriander.</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=900&q=80" alt="Veg Pizza">
+                <h3><i class="fas fa-pizza-slice"></i> Veg Pizza</h3>
+                <div class="price">₹250</div>
+                <p>Fresh dough topped with cheese, veggies and secret sauce.</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80" alt="Pav Bhaji">
+                <h3><i class="fas fa-hotdog"></i> Pav Bhaji</h3>
+                <div class="price">₹160</div>
+                <p>Maharashtrian special - mashed veggies with buttered pav buns.</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=900&q=80" alt="Falooda">
+                <h3><i class="fas fa-ice-cream"></i> Falooda</h3>
+                <div class="price">₹120</div>
+                <p>Refreshing dessert with milk, vermicelli, ice cream and nuts.</p>
+            </div>
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1517685352821-92cf88aee5a5?auto=format&fit=crop&w=900&q=80" alt="Masala Chai">
+                <h3><i class="fas fa-coffee"></i> Masala Chai</h3>
+                <div class="price">₹25</div>
+                <p>Perfect blend of tea, milk, cardamom and ginger.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 4rem;
+            color: #28a745;
+            font-size: 2rem;
+            text-align: center;
+        "><i class="fas fa-camera"></i> Menu Photos</h2>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Restaurant ambience">
+                <p>Cozy dining space with warm lighting and family-friendly seating.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=80" alt="Spicy curry dish">
+                <p>Delicious vegetarian curry served fresh, just like home cooking.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?auto=format&fit=crop&w=900&q=80" alt="Fresh ingredients">
+                <p>Fresh vegetables and spices prepared daily for our popular dishes.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Dessert presentation">
+                <p>Sweet treats and dessert options to complete your meal.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0?auto=format&fit=crop&w=900&q=80" alt="Tea service">
+                <p>Enjoy our signature masala chai served hot and aromatic.</p>
+            </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1555992336-03c3b6c57a11?auto=format&fit=crop&w=900&q=80" alt="Street view dining">
+                <p>Welcoming entrance and street view to help you spot the hotel easily.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-white">
+        <h2><i class="fas fa-concierge-bell"></i> Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Dine-in</h3>
+                <p>Comfortable family seating with AC</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Drive-through</h3>
+                <p>Quick pickup without leaving your car</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3>No-contact Delivery</h3>
+                <p>Safe & hygienic delivery at your doorstep</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Open 11 AM - 11 PM</h3>
+                <p>Serving fresh food all day long</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section section-green">
+        <div class="location-container">
+            <h2><i class="fas fa-map-marker-alt"></i> Visit Us</h2>
+            
+            <!-- YOUR EXACT GOOGLE MAPS LOCATION -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.123456789!2d75.56789012345678!3d21.0123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDAwJzI5LjQiTiA3NMsKwMzQnMDguMiJF!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="450" 
+                style="border:0; border-radius:20px;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="location-details">
+                <div class="address">
+                    <i class="fas fa-map-pin"></i>
+                    Gat No.329/2/A, Plot No.17<br>
+                    Opp. Suresh Collection, Radha Krushna Nagar<br>
+                    Mahavir Nagar, Jalgaon, Maharashtra 425001
+                </div>
+                <div class="phone">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:07030018900" style="color: #28a745; text-decoration: none;">070300 18900</a>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <a href="https://maps.app.goo.gl/YOUR_LINK_HERE" target="_blank" class="btn">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                    <a href="https://wa.me/917030018900" class="btn">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Ready to Order?</h2>
+        <p>Call now or visit us for the best vegetarian food in Jalgaon!</p>
+        <div>
+            <a href="tel:07030018900" class="btn"><i class="fas fa-phone"></i> Call 07030018900</a>
+            <a href="#location" class="btn"><i class="fas fa-map-marker-alt"></i> Visit Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <h3>होटल आरंभ</h3>
+                <p>Your favorite family veg restaurant in Jalgaon</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="#menu" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem;">Menu</a>
+                <a href="#services" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem;">Services</a>
+                <a href="#location" style="color: #ccc; text-decoration: none; display: block; margin-bottom: 0.5rem;">Location</a>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <p><i class="fas fa-phone"></i> 070300 18900</p>
+                <p><i class="fas fa-clock"></i> Open 11 AM - 11 PM</p>
+                <p><i class="fas fa-star"></i> 4.0 ★ (133 Reviews)</p>
+            </div>
+        </div>
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #34495e; color: #7f8c8d;">
+            <p>&copy; 2024 Aarambh Family Veg Hotel. All Rights Reserved. | Pure Vegetarian Restaurant</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Active navigation
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
